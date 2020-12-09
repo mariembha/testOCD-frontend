@@ -1,0 +1,28 @@
+<ul class="list-group">
+    <li [ngClass]="{'list-group-item': true,
+    'list-group-item-success': user.active,
+    'list-group-item-danger': !user.active}" *ngFor="let user of users">
+      <h3>{{ user.nom }} {{ user.prenom }}</h3>
+      <p>{{ user.email }}</p>
+      <button class="btn btn-sm btn-primary"
+      (click)="deleteUser(user.id)">Supprimer </button>
+      <button class="btn btn-sm btn-primary"
+      *ngIf="!user.showDetails"
+      (click)="user.showDetails = true">Afficher les details</button>
+<button class="btn btn-sm btn-primary"
+      *ngIf="user.showDetails"
+      (click)="user.showDetails = false">masquer les details</button>
+      <span *ngIf="user.showDetails">
+      <p>le email de cette personne est  {{ user.email }}</p>
+      
+    </span>
+      
+    </li>
+    <div class="form-group">
+      <label for="file">Choose File</label>
+      <input type="file"
+             id="file"
+             (change)="handleFileInput($event.target.files)">
+  </div>
+    
+  </ul>

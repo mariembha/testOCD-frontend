@@ -1,0 +1,16 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div><a href="" class="navbar-brand">Home</a></div>
+        <ul *ngIf="isLoggedIn" class="navbar-nav navbar-collapse justify-content-start">
+            <!-- <li>
+                <a *ngIf="!isLoggedIn" class="nav-link" href="/login">Login</a>
+            </li> -->
+            <li>
+            <a  class="nav-link" href="/users">Users</a>
+            </li>
+            <li >
+                <a  class="nav-link" href="/logout" (click)=handleLogout()>Logout</a>
+            </li>
+        </ul>
+    </nav>
+  </header>
